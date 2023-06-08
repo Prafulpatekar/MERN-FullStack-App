@@ -14,7 +14,6 @@ const dbConnection = async (app) => {
       .then(() => {
         app.listen(PORT, () => {
           console.log(`Server is running on port: ${PORT}`);
-          
         });
       })
       .catch((err) => {
@@ -23,7 +22,7 @@ const dbConnection = async (app) => {
       });
     
   } catch (err) {
-    console.log(`${err} not connect`);
+    console.log(`${err}`);
     process.exit(1);
   }
 };
