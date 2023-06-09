@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import User from "../models/userModel.js";
+import Post from "../models/postModel.js";
+import { users,posts } from "../data/demoData.js";
+
 dotenv.config();
 
 const dbConnection = async (app) => {
@@ -7,13 +11,16 @@ const dbConnection = async (app) => {
     // MONGODB SETUP
     const PORT = process.env.PORT || 8000;
     const connect = await mongoose
-      .connect(process.env.MONGOURL, {
+      .connect(process.env.MONGOURI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
       .then(() => {
         app.listen(PORT, () => {
           console.log(`Server is running on port: ${PORT}`);
+          //Demo data
+          // User.insertMany(users);
+          // Post.insertMany(posts);
         });
       })
       .catch((err) => {

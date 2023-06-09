@@ -9,6 +9,8 @@ import  path  from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.js";
+import userRouter from "./routes/userRoutes.js";
+import postRouter from "./routes/postRoutes.js";
 
 dotenv.config();
 // Configurations
@@ -26,6 +28,8 @@ app.use(cors());
 app.use("/assets",express.static(path.join(__dirname,'public/assets')));
 app.use(errorHandler);
 app.use(`${ROOTURL}/auth`,authRouter);
+app.use(`${ROOTURL}/user`,userRouter);
+app.use(`${ROOTURL}/posts`,postRouter);
 
 dbConnection(app); // Starts App
 

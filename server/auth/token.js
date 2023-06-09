@@ -4,9 +4,7 @@ const accessTokenGenrator = (user) => {
   return jwt.sign(
     {
       user: {
-        username: user.username,
-        email: user.email,
-        id: user.id,
+        id: user.id
       },
     },
     process.env.ACCESS_TOKEN_SECRET,
