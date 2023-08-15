@@ -5,7 +5,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import dbConnection from "./config/database.js";
 import errorHandler from "./errorHandlers/errorHandler.js";
-import  path  from "path";
+import path  from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import authRouter from "./routes/auth.js";

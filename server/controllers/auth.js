@@ -60,7 +60,7 @@ const registerUser = asyncHandler(async (req, res) => {
       throw new Error("User data is invalid!");
     }
   } catch (err) {
-    res.status(500);
+    res.status(500)
     throw new Error(err.message);
   }
 });
