@@ -9,6 +9,6 @@ const router = express.Router();
 router.get('/',validateToken,getFeedPosts)
 router.get('/:id',validateToken,getUserPosts)
 router.patch('/:id/like',validateToken,likePost)
-router.post('/',upload.single("picturePath"),validateToken,createPost)
+router.post('/',upload.single("picture"),validateToken,createPost)
 
 export default router
